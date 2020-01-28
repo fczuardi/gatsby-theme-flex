@@ -1,54 +1,48 @@
 {
-  "name": "gatsby-theme-flex",
-  "description": "A Gatsby theme with flexible blocks for your Markdown pages.",
+  "name": "@arshad/gatsby-themes",
+  "description": "A collection of free themes for Gatsby",
   "author": "arshad <arshad@chummun.com>",
-  "version": "0.2.0",
+  "private": true,
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "gatsby",
-    "gatsby-plugin",
-    "gatsby-theme",
-    "components"
+  "workspaces": [
+    "core/*",
+    "examples/*",
+    "plugins/*",
+    "starters/*",
+    "themes/*"
   ],
-  "bugs": {
-    "url": "https://github.com/arshad/gatsby-themes/issues"
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "release": "lerna publish && npm run sync",
+    "sync": "npm run sync:starters && npm run sync:examples",
+    "sync:starters": "./scripts/sync.sh \"starters/*\"",
+    "sync:examples": "./scripts/sync.sh \"examples/*\"",
+    "themes:phoenix": "yarn workspace @arshad/gatsby-theme-phoenix",
+    "starters:phoenix": "yarn workspace @arshad/gatsby-starter-phoenix",
+    "examples:phoenix": "yarn workspace @arshad/gatsby-example-phoenix",
+    "themes:flex": "yarn workspace gatsby-theme-flex",
+    "starters:flex": "yarn workspace gatsby-starter-flex",
+    "examples:flex": "yarn workspace gatsby-example-flex"
   },
-  "homepage": "https://github.com/arshad/gatsby-themes",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/arshad/gatsby-themes.git",
-    "directory": "themes/gatsby-theme-flex"
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
-  "peerDependencies": {
-    "gatsby": "2.19.7",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "devDependencies": {
-    "gatsby": "2.19.7",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "husky": "3.1.0",
+    "lerna": "3.19.0",
+    "prettier": "1.19.1"
   },
   "dependencies": {
-    "@arshad/gatsby-theme-page-core": "^1.1.0",
-    "@mdx-js/mdx": "^1.5.1",
-    "@mdx-js/react": "^1.5.1",
-    "@theme-ui/color": "^0.3.1",
-    "@theme-ui/color-modes": "^0.3.1",
-    "@theme-ui/prism": "^0.3.0",
-    "deepmerge": "^4.2.2",
-    "gatsby-plugin-manifest": "^2.2.37",
-    "gatsby-plugin-react-helmet": "^3.1.18",
-    "gatsby-plugin-theme-ui": "^0.3.0",
-    "is-relative-url": "^3.0.0",
-    "lodash": "^4.17.15",
-    "prop-types": "^15.7.2",
-    "react-helmet": "^5.2.1",
-    "striptags": "^3.1.1",
-    "theme-ui": "^0.3.1"
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4"
   }
 }
