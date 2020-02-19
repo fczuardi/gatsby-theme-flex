@@ -1,7 +1,10 @@
 {
-  "name": "gatsby-theme-flex",
-  "description": "A Gatsby theme with flexible blocks for your Markdown pages.",
+  "name": "@fczuardi/gatsby-theme-flex",
+  "description": "(fork) A Gatsby theme with flexible blocks for your Markdown pages.",
   "author": "arshad <arshad@chummun.com>",
+  "contributors": [
+    "fczuardi <fabricio@fabricio.org>"
+  ],
   "version": "0.2.1",
   "main": "index.js",
   "license": "MIT",
@@ -15,13 +18,12 @@
     "components"
   ],
   "bugs": {
-    "url": "https://github.com/arshad/gatsby-themes/issues"
+    "url": "https://github.com/fczuardi/gatsby-theme-flex/issues"
   },
-  "homepage": "https://github.com/arshad/gatsby-themes",
+  "homepage": "https://github.com/fczuardi/gatsby-theme-flex",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arshad/gatsby-themes.git",
-    "directory": "themes/gatsby-theme-flex"
+    "url": "https://github.com/fczuardi/gatsby-theme-flex.git"
   },
   "peerDependencies": {
     "gatsby": "2.19.12",
